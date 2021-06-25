@@ -14,3 +14,23 @@
  *= require_self
  */
  @import "bootstrap";
+
+.logo {
+  list-style: none;
+
+}
+
+.content {
+  display: flex;
+}
+
+.navbar-nav {
+  flex-direction: row;
+  
+}
+
+.logo {
+  padding-right: 5px;
+  padding-left: 5px;
+  color: white;
+}
