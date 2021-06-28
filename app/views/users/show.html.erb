@@ -1,43 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <h1>User info</h1>
-       <%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "no_image.jpg"%>
 
-      <table class="table">
-          <tr>
-            <td>name</td>
-            <td><%= @user.name %></td>
-          </tr>
-          <tr>
-            <td>introdution</td>
-            <td><%= @user.introdution %></td>
-          </tr>
-      </table>
-
-      <%= link_to edit_user_path(@user), class:"btn btn-outline-secondary btn-block",method: :get do %>
-       <i class="fas fa-user-cog"></i>
-      <% end %>
-      
-      <h1>New book</h1>
-      <%= form_with model:@book, local:true do |f| %>
-      <P>Title</P>
-      <%= f.text_field :title %>
-      <p>Opinion</p>
-      <%= f.text_area :body %>
-      <%= f.submit 'Create Book'%>
-      <% end %>
-    </div>
+   <%= render 'books/list', user: @user, book: @book %>
 
     <div class="col-md-8 offset-md-1">
       <h1>Books</h1>
        <table>
-         <% @books.each do |book| %>
          <tr>
            <td></td>
            <td>Title</td>
            <td>Opition</td>
          </tr>
+         <% @books.each do |book| %>
          <tr>
            <td><%= attachment_image_tag book.user,:profile_image_id,:fill,40,40,fallback:"no_image.jpg",size:'40x40' %></td>
            <td><%= book.title %></td>
