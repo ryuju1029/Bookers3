@@ -1,1 +1,16 @@
-<h1>book edit</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 mx-auto">
+       <h1>Editing Book</h1>
+       <%= form_with model:@book, local:true do |f| %>
+       <p>Title</p>
+       <%= f.text_field :title,:size => "60*60" %>
+       <p>Opinion</p>
+       <%= f.text_area :body,:size => "60*60"  %></br>
+       <%= f.submit 'Update user'%>
+       <% end %>
+    </div>
+  </div>
+</div>
+
+
